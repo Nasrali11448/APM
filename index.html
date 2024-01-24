@@ -1,5 +1,4 @@
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,23 +31,16 @@
         .video-button {
             background-color: #5D00FF;
             color: yellow;
-            margin-left: 10px;
             font-size: 16px;
             margin-top: 50px;
         }
 
-        .discord-button {
-            background-color: #7289DA;
-            color: white;
-            margin-left: 10px;
-            font-size: 16px;
-        }
-
+        .discord-button,
         .telegram-button {
-            background-color: #0088cc;
+            background-color: #2196F3;
             color: white;
-            margin-left: 10px;
             font-size: 16px;
+            margin-left: 10px;
             margin-top: 30px;
         }
 
@@ -66,23 +58,62 @@
             color: blue;
             margin-top: 90px;
         }
+
+        .tab {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
     <h1 class="welcome-text">Welcome to AdPanelTeam</h1>
-    
-    <p class="downloads-text">Downloads:</p>
-    
-    <a href="https://sub2unlock.com/EHm3e" target="_blank" class="button">AdPanel-V1</a>
-    
-    <p class="description">This is the latest Admin Panel version with clone app method</p>
-    
-    <a href="https://youtu.be/qa9joTEz3hc?si=PZQf6LRE405S9U-j" target="_blank" class="video-button">Tutorial</a>
 
-    <a href="https://discord.gg/5AGDsh8FCE" target="_blank" class="discord-button">Join Discord Server</a>
+    <!-- Tabs -->
+    <div class="tab" onclick="showTab('mobile')">Mobile</div>
+    <div class="tab" onclick="showTab('pc')">PC</div>
+    <div class="tab" onclick="showTab('info')">Info</div>
 
-    <a href="https://t.me/+Z15RUNG3u6MzMjE0" target="_blank" class="telegram-button">Join Telegram Channel</a>
+    <!-- Mobile Tab Content -->
+    <div class="tab-content mobile active">
+        <p class="downloads-text">Downloads:</p>
+        <a href="https://sub2unlock.com/EHm3e" target="_blank" class="button">AdPanel-V1</a>
+        <p class="description">This is the latest Admin Panel version with clone app method</p>
+        <a href="https://youtu.be/qa9joTEz3hc?si=PZQf6LRE405S9U-j" target="_blank" class="video-button">Tutorial</a>
+    </div>
+
+    <!-- PC Tab Content -->
+    <div class="tab-content pc">
+        <p>SOON</p>
+    </div>
+
+    <!-- Info Tab Content -->
+    <div class="tab-content info">
+        <a href="https://discord.gg/5AGDsh8FCE" target="_blank" class="discord-button">Join Discord Server</a>
+        <a href="https://t.me/+Z15RUNG3u6MzMjE0" target="_blank" class="telegram-button">Join Telegram Channel</a>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.querySelector(`.${tabName}`).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
